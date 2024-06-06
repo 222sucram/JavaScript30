@@ -8,6 +8,15 @@
 </head>
 <body>
 <script>
+const pressed = [];
+const secretCode = 'marcus'
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key)
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length)
+    console.log(pressed)
+    pressed.join('') === secretCode ? console.log(1) : console.log(false)
+  })
 </script>
 </body>
 </html>
